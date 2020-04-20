@@ -1,0 +1,41 @@
+/* Give all prices a background color of orange */
+.price {
+    background: orange;
+  }
+  
+  /* Give all names a background color of yellow */
+  .name {
+    background: yellow;
+  }
+  
+  /* Give all quantities a background color of green */
+  tbody tr td:last-child {
+    background: green;
+  }
+  
+
+  td:hover {
+    border: 2px solid black;
+  }
+  
+  /* Increase the font size of the Name table header to 20px */
+  thead tr th:first-child {
+    font-size: 20px;
+  }
+  
+  /* Make the two links have a teal color when they've been visited */
+  a:visited {
+    color: teal;
+  }
+  
+  /* Make the Checkout link have a 'Courier New' font when it's hovered over */
+  a[href="/checkout"]:hover {
+    font-family: "Courier New", Courier;
+  }
+  
+  /* Make the price of the bananas ($1.50) be bold and have a yellow color */
+  tbody tr:nth-child(2) td.price {
+    color: yellow;
+    font-weight: bold;
+  }
+  

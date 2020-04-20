@@ -1,0 +1,47 @@
+    .page {
+        background: #333;
+    }
+    .title {
+        color: silver;
+        font-family: Comic Sans, Comic Sans MS, cursive;
+        font-size: 50px;
+        font-weight: bold;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+    .text {
+        color: silver;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        text-align: justify;
+    }
+    .box {
+        border: 5px solid white;
+        border-radius: 10px;
+        align-items: flex-start;
+    }
+    div {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: black;
+    }
+
+    .navbar {
+        float: right;
+    } 
+
+    .navbar a {
+        display: block;
+        color: white;
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+     a:hover {
+        background-color: silver;
+    }
