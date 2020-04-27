@@ -1,4 +1,5 @@
 <h1>Snake Listing</h1>
+
 <% for listing in @listings %>
 <div class="card">
         <%= link_to listing.title, listing_path(listing.id) %>
@@ -10,4 +11,4 @@
 </div>
 <% end %>
 
-<%= image_tag "hero.png", alt: "cool snake" %>
+
