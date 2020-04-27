@@ -1,19 +1,30 @@
 <h1>New Listing</h1>
 
-<%= form_with model: @Listing do |form| %>
-    <div>
+<% if @listing.errors.any? %>
+    <% @listing.errors.full_messages.each do |message| %>
+        <li style="color: red"><%= message %></li>
+    <% end %>
+<% end %>
+
+<%= form_with(model: @listing, local: true) do |form| %>
+    <div class="title-field">
         <%= form.label :title %>
         <%= form.text_field :title %>
     </div>
 
     <div>
-        <%= form.label :description %>
-        <%= form.text_area :description %>
+        <%= form.label :breed_id %>
+        <%= form.select(:breed_id, @breeds.map{|b| [b.name, b.id]}) %>
     </div>
 
+    <% @sexes.each do |option| %>
+        <%= form.radio_button :sex, option %>
+        <%= form.label option %> 
+    <% end %>
+
     <div>
-        <%= form.label :breed_id %>
-        <%= form.text_field :breed_id %>
+        <%= form.label :description %>
+        <%= form.text_area :description %>
     </div>
 
     <div>
@@ -44,6 +55,11 @@
     <div>
         <%= form.label :diet %>
         <%= form.text_field :diet %>
+    </div>
+
+    <div>
+        <%= form.label :picture %>
+        <%= form.file_field :picture, accept: "image/png, image/gif, image/jpeg, image/jpg" %>
     </div>
 
     <div>

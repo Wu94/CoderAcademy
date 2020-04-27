@@ -5,10 +5,11 @@ one:
   description: MyString
   breed: one
   sex: 1
+  price: 1
   deposit: 1
   city: MyString
   state: MyString
-  date_of_birth: 2020-04-24
+  date_of_birth: 2020-04-27
   diet: MyString
 
 two:
@@ -16,8 +17,9 @@ two:
   description: MyString
   breed: two
   sex: 1
+  price: 1
   deposit: 1
   city: MyString
   state: MyString
-  date_of_birth: 2020-04-24
+  date_of_birth: 2020-04-27
   diet: MyString

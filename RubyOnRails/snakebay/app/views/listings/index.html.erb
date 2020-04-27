@@ -1,0 +1,13 @@
+<h1>Snake Listing</h1>
+<% for listing in @listings %>
+<div class="card">
+        <%= link_to listing.title, listing_path(listing.id) %>
+        <%= image_tag listing.picture if listing.picture.attached? %>
+        <p><%= "#{listing.city}, #{listing.state}" %></p>
+        <p><%= listing.date_of_birth %></p>
+        <p><%= listing.price %></p>
+        <%= link_to "edit", edit_listing_path(listing.id) %>
+</div>
+<% end %>
+
+<%= image_tag "hero.png", alt: "cool snake" %>
