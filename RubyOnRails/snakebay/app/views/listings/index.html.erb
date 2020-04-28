@@ -11,12 +11,14 @@
                 <p><%= listing.price %></p>
         <%= link_to "edit", edit_listing_path(listing.id) %>
 
+<% if current_user.id == listing.id %>
 
 <%= form_with model: listing, local: true, method: "delete" do |form| %>
         <div>
                 <%= submit_tag "delete", class: "icon" %>
                 <%= link_to "edit", edit_listing_path(listing.id), class: "icon" %>
         </div>
+        <% end %>
     <% end %>
 <% end %>
 </div>
