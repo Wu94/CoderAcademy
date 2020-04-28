@@ -4,11 +4,20 @@
 <div class="card">
         <%= link_to listing.title, listing_path(listing.id) %>
         <%= image_tag listing.picture if listing.picture.attached? %>
-        <p><%= "#{listing.city}, #{listing.state}" %></p>
-        <p><%= listing.date_of_birth %></p>
-        <p><%= listing.price %></p>
+                <p><%= listing.description %></p>
+                <p><%= "#{listing.city}, #{listing.state}" %></p>
+                <p><%= listing.date_of_birth %></p>
+                <p><%= listing.sex %></p>
+                <p><%= listing.price %></p>
         <%= link_to "edit", edit_listing_path(listing.id) %>
-</div>
-<% end %>
 
+
+<%= form_with model: listing, local: true, method: "delete" do |form| %>
+        <div>
+                <%= submit_tag "delete", class: "icon" %>
+                <%= link_to "edit", edit_listing_path(listing.id), class: "icon" %>
+        </div>
+    <% end %>
+<% end %>
+</div>
 

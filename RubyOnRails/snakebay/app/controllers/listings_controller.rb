@@ -10,35 +10,37 @@ class ListingsController < ApplicationController
     end
 
     def new
-        @breeds = Breed.all
-        @sexes = Listing.sexes.keys
+        set_breeds_and_sexes 
         @listing = Listing.new
     end
 
     def create
-        puts params["listing"]
         @listing = Listing.create(listing_params)
         if @listing.errors.any? 
-            @sexes = Listing.sexes.keys
-            @breeds = Breed.all 
+            set_breeds_and_sexes
             render "new"
-        else redirect_to listings_path 
+        else 
+            redirect_to listings_path 
         end
-        
     end
 
     def edit
-        @listing = Listing.find(params[:id])
+        set_breeds_and_sexes
     end
 
     def update
-       
-        #finsih logic for updating the record
+        @listing = Listing.update(params["id"], listing_params)
+        if @listing.errors.any? 
+            set_breeds_and_sexes
+            render "edit"
+        else 
+            redirect_to listings_path 
+        end
     end
 
     def destroy
-    
-        #finish logic for deleting the record
+        Listing.find(params["id"]).destroy
+        redirect_to listings_path
     end
 
     private 
@@ -47,6 +49,10 @@ class ListingsController < ApplicationController
         @listing = Listing.find(params[:id])
     end
 
+    def set_breeds_and_sexes
+        @breeds = Breed.all
+        @sexes = Listing.sexes.keys
+    end
 
     def listing_params
         params.require(:listing).permit(:title, :description, :breed_id, :sex, :city, :state, :price, :deposit, :date_of_birth, :diet, :picture)
