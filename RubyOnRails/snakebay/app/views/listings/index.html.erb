@@ -1,6 +1,5 @@
 <h1>Snake Listing</h1>
 
-<%= link_to "view", listing_path(listing) %>
 
 <% for listing in @listings %>
 <div class="card">
@@ -12,6 +11,7 @@
                 <p><%= listing.sex %></p>
                 <p><%= listing.price %></p>
         <%= link_to "edit", edit_listing_path(listing.id) %>
+        <%= link_to "view", listing_path(listing) %>
 
 <% if current_user.id == listing.id %>
 

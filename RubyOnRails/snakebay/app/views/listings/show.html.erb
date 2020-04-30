@@ -1,4 +1,7 @@
-<%= @listing.title %>
+<h1><%= @listing.title %></h1>
+<h2>Description</h2>
+<p><%= @listing.description %></p>
+
 <% if current_user.id == listing.id %>
 <%= link_to "edit", edit_listing_path(@listing.id) %> 
 <% end %>
