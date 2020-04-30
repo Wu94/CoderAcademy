@@ -1,5 +1,7 @@
 <h1>Snake Listing</h1>
 
+<%= link_to "view", listing_path(listing) %>
+
 <% for listing in @listings %>
 <div class="card">
         <%= link_to listing.title, listing_path(listing.id) %>
@@ -22,4 +24,5 @@
     <% end %>
 <% end %>
 </div>
+
 
